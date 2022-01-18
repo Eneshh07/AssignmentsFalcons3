@@ -42,7 +42,7 @@ export default class LdsWireGet extends LightningElement {
             console.log('Error State: ', JSON.stringify(error));
         }
     }
-    
+
     @wire(getPicklistValues, { recordTypeId: '012000000000000AAA', fieldApiName: CITY_FIELD })
     getCityPicklist({ data, error }) {
         if (data) {
