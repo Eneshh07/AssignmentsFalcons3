@@ -24,8 +24,10 @@ export default class LdsWireGet extends LightningElement {
             console.log('Error getObjectInfos: ', JSON.stringify(error));
         }
     }
-
-    @wire(getPicklistValues, { recordTypeId: '012000000000000AAA', fieldApiName: COUNTRY_FIELD })
+    //Below is for Master recordType
+    //@wire(getPicklistValues, { recordTypeId: '012000000000000AAA', fieldApiName: COUNTRY_FIELD })
+    //Below is for World recordType - replace the record type Id from your salesforce org
+    @wire(getPicklistValues, { recordTypeId: '0128d000000gIiF', fieldApiName: COUNTRY_FIELD })
     getCountryPicklist({ data, error }) {
         if (data) {
             console.log('Country Picklist=>: ', JSON.stringify(data));
@@ -34,7 +36,10 @@ export default class LdsWireGet extends LightningElement {
         }
     }
 
-    @wire(getPicklistValues, { recordTypeId: '012000000000000AAA', fieldApiName: STATE_FIELD })
+    //Below is for Master recordType
+    //@wire(getPicklistValues, { recordTypeId: '012000000000000AAA', fieldApiName: STATE_FIELD })
+    //Below is for World recordType - replace the record type Id from your salesforce org
+    @wire(getPicklistValues, { recordTypeId: '0128d000000gIiF', fieldApiName: STATE_FIELD })
     getStatePicklist({ data, error }) {
         if (data) {
             console.log('State Picklist=>: ', JSON.stringify(data));
@@ -42,8 +47,11 @@ export default class LdsWireGet extends LightningElement {
             console.log('Error State: ', JSON.stringify(error));
         }
     }
-
-    @wire(getPicklistValues, { recordTypeId: '012000000000000AAA', fieldApiName: CITY_FIELD })
+    
+    //Below is for Master recordType
+    //@wire(getPicklistValues, { recordTypeId: '012000000000000AAA', fieldApiName: CITY_FIELD })
+    //Below is for World recordType - replace the record type Id from your salesforce org
+    @wire(getPicklistValues, { recordTypeId: '0128d000000gIiF', fieldApiName: CITY_FIELD })
     getCityPicklist({ data, error }) {
         if (data) {
             console.log('City Picklist=>: ', JSON.stringify(data));
