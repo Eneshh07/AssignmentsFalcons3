@@ -1,5 +1,5 @@
 import { LightningElement , wire } from 'lwc';
-import { getObjectInfo , getObjectInfos , getPicklistValues } from 'lightning/uiObjectInfoApi';
+import { getObjectInfo , getObjectInfos , getPicklistValues,getPicklistValuesByRecordType } from 'lightning/uiObjectInfoApi';
 import ACCOUNT_OBJECT from '@salesforce/schema/Account';
 import CONTACT_OBJECT from '@salesforce/schema/Contact';
 import STATE_FIELD from '@salesforce/schema/Account.State__c';
@@ -59,4 +59,14 @@ export default class LdsWireGet extends LightningElement {
             console.log('Error State: ', JSON.stringify(error));
         }
     }
+
+    @wire(getPicklistValuesByRecordType, {objectApiName: ACCOUNT_OBJECT, recordTypeId: '0128d000000gIiF'})
+    getCityPicklist({ data, error }) {
+        if (data) {
+            console.log('data of picklis by recordTypes=>: ', JSON.stringify(data));
+        } else if (error) {
+            console.log('Error State: ', JSON.stringify(error));
+        }
+    }
+  
 }
